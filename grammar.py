@@ -1,10 +1,10 @@
 # grammar.py
-
+from typing import List
 from nodes import Token, Node, ast_stack, build_tree, dt_bu
 from vocabulary import is_reserved
 
 
-def parser(tokens):
+def parser(tokens : List[Token]) -> Node:
     global _tokens
     _tokens = tokens[:]
     E()
