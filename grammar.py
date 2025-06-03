@@ -1,10 +1,10 @@
 # grammar.py
-
+from typing import List
 from nodes import Token, Node, ast_stack, build_tree, dt_bu
 from vocabulary import is_reserved
 
 
-def parser(tokens):
+def parser(tokens : List[Token]) -> Node:
     global _tokens
     _tokens = tokens[:]
     E()
@@ -26,7 +26,8 @@ def read(expected_type, expected_value=""):
         if token.type != expected_type or (token.type == "identifier" and is_reserved(token.value)):
             raise SyntaxError(f"Expected {expected_type}, got {token.type} '{token.value}'")
 
-    if token.type == "identifier":
+
+    if token.type == "identifier" and not (is_reserved(token.value)):
         build_tree(f"<ID:{token.value}>", 0)
     elif token.type == "integer":
         build_tree(f"<INT:{token.value}>", 0)
