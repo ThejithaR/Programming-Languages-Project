@@ -6,9 +6,10 @@ from grammar import parser
 from nodes import print_ast, print_tokens
 import sys
 
-tokens = []           # List of Token objects (global like in C++)
-dt_bu = []            # Derivation tree (strings)
-ast_stack = []        # AST bottom-up stack (list used like a stack)
+
+# tokens = []           # List of Token objects (global like in C++)
+# dt_bu = []            # Derivation tree (strings)
+# ast_stack = []        # AST bottom-up stack (list used like a stack)
 
 def read_file_to_string(filename: str) -> str:
     with open(filename, 'r', encoding='utf-8') as f:
@@ -54,26 +55,32 @@ if __name__ == "__main__":
 from lexer import scanner , screener
 from nodes import tokens , print_ast , print_tokens , print_tree
 from grammar import parser
+from standardizse import standardizer
 
 # code = '''let rec f n = n eq 1 -> 0 | n eq 2 -> 1 | f (n-1) + f (n-2) in
 # let rec fib n = n eq 0 -> nil | (fib (n-1) aug f (n)) in
 # Print ( fib 5 )'''
 
-code = '''let Sum(A) = Psum (A,Order A )
-where rec Psum (T,N) = N eq 0 -> 0
-| Psum(T,N-1)+T N
-in Print ( Sum (1,2,3,4,5) )'''
+# code = '''let Sum(A) = Psum (A,Order A )
+# where rec Psum (T,N) = N eq 0 -> 0
+# | Psum(T,N-1)+T N
+# in Print ( Sum (1,2,3,4,5) )'''
+
+code = '''let f x y z = x + y + z in f 1 2 3'''
+
 scanner(code)
 screener()
 # for token in tokens:
 #     print(token)
 S = parser(tokens)
 
+standardizer()
+
 #print(S)
 
 # print(parser(tokens))
 # print("Hello")
 print_ast()
-print_tokens()
+# print_tokens()
 # print_tree()
 # print(tokens)
