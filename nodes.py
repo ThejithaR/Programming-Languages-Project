@@ -45,6 +45,7 @@ def print_ast():
 
 
 def print_tokens():
+    global tokens
     print("\nTokens:")
     for token in tokens:
         print(f"{token.type} : {token.value}")
