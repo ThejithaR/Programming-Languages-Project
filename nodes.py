@@ -42,7 +42,7 @@ def print_ast():
         return
     print("Abstract Syntax Tree (AST):")
     print(ast_stack[-1].__repr__())
-
+    # print(ast_stack[-1])
 
 def print_tokens():
     print("\nTokens:")
