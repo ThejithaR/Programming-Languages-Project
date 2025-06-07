@@ -144,18 +144,18 @@ from grammar import parser
 from standardizse import standardizer
 from cse import cse
 
-# code = '''let rec f n = n eq 1 -> 0 | n eq 2 -> 1 | f (n-1) + f (n-2) in
-# let rec fib n = n eq 0 -> nil | (fib (n-1) aug f (n)) in
-# Print ( fib 5 )'''
+code = '''let rec f n = n eq 1 -> 0 | n eq 2 -> 1 | f (n-1) + f (n-2) in
+let rec fib n = n eq 0 -> nil | (fib (n-1) aug f (n)) in
+Print ( fib 6 )'''
 
 # code = '''let Sum(A) = Psum (A,Order A )
 # where rec Psum (T,N) = N eq 0 -> 0
 # | Psum(T,N-1)+T N
-# in Print ( Sum (1,2) )'''
+# in Print ( Sum (1,2,3,4,5) )'''
 
 # code = '''let f x y z = x + y + z in f 1 2 3'''
 # code = '''let x = 2 in print x'''
-code = '''(fn x. print x) 3'''
+# code = '''(fn x. print x) 3'''
 
 scanner(code)
 screener()

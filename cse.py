@@ -134,15 +134,15 @@ def rules(type_):
             b = stack_stk[-1].arg_int
             stack_stk.pop()
             if op == "+":
-                stack_stk.append(Base("integer", a + b))
+                stack_stk.append(Base("integer", arg_int =  a + b))
             elif op == "-":
-                stack_stk.append(Base("integer", a - b))
+                stack_stk.append(Base("integer", arg_int = a - b))
             elif op == "*":
-                stack_stk.append(Base("integer", a * b))
+                stack_stk.append(Base("integer", arg_int = a * b))
             elif op == "/":
-                stack_stk.append(Base("integer", a // b))
+                stack_stk.append(Base("integer", arg_int = a // b))
             elif op == "**":
-                stack_stk.append(Base("integer", pow(a, b)))
+                stack_stk.append(Base("integer", arg_int = pow(a, b)))
             elif op == "gr":
                 if a > b:
                     stack_stk.append(Base("boolean", "true"))
@@ -169,7 +169,7 @@ def rules(type_):
                 raise RuntimeError("Error")
             a = stack_stk[-1].arg_int
             stack_stk.pop()
-            stack_stk.append(Base("integer", -a))
+            stack_stk.append(Base("integer", arg_int = -a))
         elif op == "not":
             if stack_stk[-1].type != "boolean":
                 print(f"Expect a boolean with {op}")
@@ -242,8 +242,9 @@ def rules(type_):
             lst = stack_stk[-1]
             stack_stk.pop()
             index = stack_stk[-1].arg_int
+            print(stack_stk[-1])
             stack_stk.pop()
-            # print(stack_stk[-1])
+            # print(index)
             # print("/n")
             if (index > len(lst.children)) or (index <= 0):
                 print(f"Index:{index} is out of bound in ")
