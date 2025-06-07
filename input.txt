@@ -1,0 +1,12 @@
+let x = 2 in print x
+
+[Base(type=environment, arg_str=, arg_int=None, children=[]), Base(type=gamma, arg_str=, arg_int=None, children=[]), Base(type=lambda, arg_str=, arg_int=1, children=[Base(type=identifier, arg_str=x, arg_int=None, children=[])]), Base(type=integer, arg_str=, arg_int=3, children=[])]
+
+Control Structure 0:
+  Base(type=gamma, arg_str=, arg_int=None, children=[])
+  Base(type=lambda, arg_str=, arg_int=1, children=[Base(type=identifier, arg_str=x, arg_int=None, children=[])])
+  Base(type=integer, arg_str=, arg_int=3, children=[])
+Control Structure 1:
+  Base(type=gamma, arg_str=, arg_int=None, children=[])
+  Base(type=identifier, arg_str=print, arg_int=None, children=[])
+  Base(type=identifier, arg_str=x, arg_int=None, children=[])
