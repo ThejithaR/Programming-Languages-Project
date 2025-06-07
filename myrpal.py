@@ -3,7 +3,10 @@
 
 from lexer import scanner, screener
 from grammar import parser
-from nodes import print_ast, print_tokens
+from nodes import print_ast, print_tokens, tokens
+from cse import cse
+from cse_nodes import print_base
+from standardizse import standardizer
 import sys
 
 
@@ -27,13 +30,16 @@ def main():
         input_code = read_file_to_string(input_file)
 
         # Lexical Analyzer
-        tokens = scanner(input_code)
+        scanner(input_code)
         print_tokens()  # Optional for debugging
-        tokens = screener(tokens)
+        # tokens = screener(tokens)
+        screener()
         # print_tokens()  # Optional for debugging
 
         # Parser
         ast = parser(tokens)
+
+        # standardizer()
 
         if tree_flag:
             print_ast()
@@ -52,10 +58,10 @@ def main():
 if __name__ == "__main__":
     main()
 
-from lexer import scanner , screener
-from nodes import tokens , print_ast , print_tokens , print_tree
-from grammar import parser
-from standardizse import standardizer
+# from lexer import scanner , screener
+# from nodes import tokens , print_ast , print_tokens , print_tree
+# from grammar import parser
+# from standardizse import standardizer
 
 # code = '''let rec f n = n eq 1 -> 0 | n eq 2 -> 1 | f (n-1) + f (n-2) in
 # let rec fib n = n eq 0 -> nil | (fib (n-1) aug f (n)) in
@@ -66,22 +72,32 @@ from standardizse import standardizer
 # | Psum(T,N-1)+T N
 # in Print ( Sum (1,2,3,4,5) )'''
 
-code = '''let f x y z = x + y + z in f 1 2 3'''
+# code = '''let f x y z = x + y + z in f 1 2 3'''
 
-scanner(code)
-screener()
+# scanner(code)
+# screener()
+
+
 # for token in tokens:
 #     print(token)
-S = parser(tokens)
 
-standardizer()
+
+# S = parser(tokens)
+
+# standardizer()
 
 #print(S)
 
 
 # print(parser(tokens))
 # print("Hello")
-print_ast()
+
+
+# print_ast()
+# cse()
+
+
+# print_base()
 # print_tokens()
 # print_tree()
 # print(tokens)
