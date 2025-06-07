@@ -242,7 +242,7 @@ def rules(type_):
             lst = stack_stk[-1]
             stack_stk.pop()
             index = stack_stk[-1].arg_int
-            print(stack_stk[-1])
+            # print(stack_stk[-1])
             stack_stk.pop()
             # print(index)
             # print("/n")
