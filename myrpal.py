@@ -4,8 +4,6 @@
 from lexer import scanner, screener
 from grammar import parser
 from nodes import print_ast, print_tokens, tokens
-from cse import cse
-from cse_nodes import print_base
 from standardizse import standardizer
 import sys
 
@@ -39,15 +37,12 @@ def main():
         # Parser
         ast = parser(tokens)
 
-        # standardizer()
 
         if tree_flag:
             print_ast()
             return
         
-
-        # Placeholder for standardizer
-        # standardizer(ast)
+        # standardizer()
 
         # Placeholder for CSE machine
         # cse(ast)
