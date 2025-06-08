@@ -1,0 +1,14 @@
+let rec size x = x/10 gr 9 -> 1 + size(x/10) | 
+                              x/10 ne 0 -> 2 | 
+                                           1
+in let rec pal_even (x,n) = n eq 2 -> x/10 eq x-x/10*10 -> true | 
+                                                           false | 
+                                      x/(10**(n-1)) eq x-x/10*10 -> pal_even ((x-x/(10**(n-1))*(10**(n-1)))/10, n-2) | 
+                                                                    false 
+in let rec pal_odd (x,n) = n eq 1 -> true |  
+                                     x/(10**(n-1)) eq x-x/10*10 -> pal_odd((x-x/(10**(n-1))*(10**(n-1)))/10, n-2) | 
+                                                                   false
+in let pal (x) = size x /2*2 ne size x -> pal_odd (x,  size x) | 
+                                          pal_even (x, size x)
+in let IsPal(x) = print(pal x)
+in IsPal(17271)

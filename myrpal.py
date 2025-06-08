@@ -31,7 +31,7 @@ def main():
 
         # Lexical Analyzer
         scanner(input_code)
-        print_tokens()  # Optional for debugging
+        # print_tokens()  # Optional for debugging
         # tokens = screener(tokens)
         screener()
         # print_tokens()  # Optional for debugging
