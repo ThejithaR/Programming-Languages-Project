@@ -24,6 +24,7 @@ def main():
 
     input_file = sys.argv[1]
     tree_flag = len(sys.argv) > 2 and sys.argv[2] == "-ast"
+    standardized_flag = len(sys.argv) > 2 and sys.argv[2] == "-st"
 
     try:
         input_code = read_file_to_string(input_file)
@@ -43,6 +44,10 @@ def main():
         #Standardization
         standardizer()
 
+        if standardized_flag:
+            print_ast()
+            return
+        
         #CSE machine
         cse()
 
