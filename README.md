@@ -27,3 +27,30 @@ To print the Standardized Abstract syntax tree of the program, use the following
 ```
 
 `input.rpal` is the example program in the project description and there are other test programs in `test` folder named as `ex1.rpal`,`ex2.rpal`...etc.
+
+<hr></hr>
+
+### Makefile (Not recommended if you haven't make installed on Local PC)
+
+<mark>If Your PC have make installed ONLY</mark> you can run the same programs using makefile also,
+
+Commands: `./input.rpal` is the same file path as above and can replace with any `./tests/ex7.rpal` as well
+
+Run:
+
+```bash
+Programming-Languages-Project> make run file=./input.rpal
+```
+
+AST:
+
+```bash
+Programming-Languages-Project> make run ast file=./input.rpal
+```
+
+ST:
+
+```bash
+Programming-Languages-Project> make run st file=./input.rpal
+```
+
