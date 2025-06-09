@@ -1,4 +1,10 @@
 # myrpal.py
+'''
+Group name : 44 65 62 75 67 20 6D 65 20 67 65 6E 74 6C 79
+Members : 
+        220008E - Abeyrathna A.H.M.R.T.
+        220122X - Dilmina K.M.S.
+'''
 
 from lexer import scanner, screener
 from grammar import parser
