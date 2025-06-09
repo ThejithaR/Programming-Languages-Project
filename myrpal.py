@@ -1,5 +1,4 @@
-
-# # myrpal.py
+# myrpal.py
 
 
 from lexer import scanner, screener
